@@ -1,0 +1,4 @@
+config/*.js
+webpack.config.js
+src/assets/js/**
+node_modules

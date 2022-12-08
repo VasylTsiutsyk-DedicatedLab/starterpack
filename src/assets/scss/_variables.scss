@@ -1,0 +1,14 @@
+:root {
+  --color-gray: #e8eaed;
+  --color-yellow: #e9ddce;
+  --color-red: #ea4335;
+  --color-black: #000;
+  --color-white: #fff;
+
+  // Type
+  --font-family-primary: 'Montserrat', sans-serif;
+
+  // Transitions
+  --transition-duration-primary: 0.3s;
+  --transition-primary: all var(--transition-duration-primary);
+}

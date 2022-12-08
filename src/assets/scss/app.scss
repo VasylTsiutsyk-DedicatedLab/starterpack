@@ -1,0 +1,15 @@
+@import '~normalize.css';
+@import './variables';
+@import 'fonts';
+@import 'section';
+
+body {
+  background-color: var(--color-gray);
+  font-family: var(--font-family-primary);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 1rem;
+}
