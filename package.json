@@ -1,31 +1,25 @@
 {
   "name": "webpack-init",
   "version": "1.0.0",
-  "description": "webpack init",
   "private": true,
-  "main": "main.js",
+  "description": "webpack init",
+  "author": "Vasyl <v.tsyutsyk@gmail.com>",
   "scripts": {
-    "dev-build": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "staging-build": "cross-env NODE_ENV=staging webpack",
-    "prod-build": "cross-env NODE_ENV=production webpack",
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack.config.js --open",
+    "dev-build": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "eslint": "eslint --ext .js,.vue src --color",
     "eslint-fix": "eslint --ext .js,.vue src --fix --color",
+    "lint-and-build": "npm run dev-build && npm run eslint",
+    "prod-build": "cross-env NODE_ENV=production webpack",
+    "staging-build": "cross-env NODE_ENV=staging webpack",
     "stylelint": "stylelint \"**/*.{scss,vue,css}\" --syntax scss --color",
-    "stylelint-fix": "stylelint \"**/*.{scss,vue,css}\" --syntax scss --fix --color",
-    "lint-and-build": "npm run dev-build && npm run eslint"
+    "stylelint-fix": "stylelint \"**/*.{scss,vue,css}\" --syntax scss --fix --color"
   },
-  "browserslist": "> 0.25%, not dead",
-  "keywords": [
-    "js",
-    "javascript",
-    "webpack"
-  ],
-  "author": "Vasyl <v.tsyutsyk@gmail.com>",
-  "license": "ISC",
+  "main": "main.js",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "normalize.css": "^8.0.1",
+    "register-service-worker": "^1.7.2",
     "vue": "^3.2.39",
     "vue-3-meta": "^2.4.0",
     "vue-router": "^4.0.3"
@@ -38,6 +32,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-syntax-import-meta": "^7.10.4",
     "@babel/preset-env": "^7.20.2",
+    "@vue/cli-plugin-pwa": "~5.0.0",
     "@vue/compiler-sfc": "^3.2.45",
     "autoprefixer": "^10.4.13",
     "babel-eslint": "^10.1.0",
@@ -86,10 +81,17 @@
     "webpack-hot-middleware": "^2.25.2",
     "webpack-merge": "^5.8.0"
   },
+  "browserslist": "> 0.25%, not dead",
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint-and-build",
       "pre-push": "npm run lint-and-build"
     }
-  }
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "webpack"
+  ],
+  "license": "ISC"
 }
